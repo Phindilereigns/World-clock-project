@@ -18,3 +18,42 @@ function updateTimeDate() {
     timeElementSecond.innerHTML = now.format("ss");
   });
 }
+
+function updateCity(event) {
+  const cityTimeZone =
+    event.target.value === "current" ? moment.tz.guess() : event.target.value;
+
+  if (cityTimeZone) {
+    const cityName = cityTimeZone.split("/")[1].replace("_", " ");
+    const now = moment.tz(cityTimeZone);
+
+    const cityContainer = document.querySelector("#city-container");
+    cityContainer.innerHTML = `
+      <div class="city">
+        <h2 class="city-name">${cityName}</h2>
+        <p class="city-date">${now.format("MMMM Do YYYY")}</p>
+        <div class="box">
+          <div class="clock">
+            <div class="front-clock">
+              <div>${now.format("HH")}</div>
+              <p>hour</p>
+            </div>
+          </div>
+          <div class="clock">
+            <div class="front-clock">
+              <div>${now.format("mm")}</div>
+              <p>minutes</p>
+            </div>
+          </div>
+          <div class="clock">
+            <div class="front-clock">
+              <div>${now.format("ss")}</div>
+              <p>seconds</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="index.html">Back to All Cities</a>
+    `;
+  }
+}
