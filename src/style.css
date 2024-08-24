@@ -114,12 +114,26 @@ body {
 }
 
 .clock::before {
-  background: linear-gradient(0deg, transparent, transparent, #2370f5, #2370f5, #2370f5);
+  background: linear-gradient(
+    0deg,
+    transparent,
+    transparent,
+    #2370f5,
+    #2370f5,
+    #2370f5
+  );
   z-index: 1;
 }
 
 .clock::after {
-  background: linear-gradient(0deg, transparent, transparent, #b91fdc, #b91fdc, #b91fdc);
+  background: linear-gradient(
+    0deg,
+    transparent,
+    transparent,
+    #b91fdc,
+    #b91fdc,
+    #b91fdc
+  );
   z-index: 0;
   animation-delay: -3s;
 }
@@ -144,3 +158,9 @@ body {
   align-items: center;
 }
 
+footer {
+  text-align: center;
+  margin-top: 1rem auto;
+  color: #fff;
+  font-size: 1rem;
+}
