@@ -57,3 +57,10 @@ function updateCity(event) {
     `;
   }
 }
+
+document
+  .querySelector("#drop-down-elements")
+  .addEventListener("change", updateCity);
+
+updateTimeDate();
+setInterval(updateTimeDate, 1000);
